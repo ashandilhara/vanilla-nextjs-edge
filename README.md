@@ -1,0 +1,2 @@
+# vanilla-nextjs-edge
+ 
