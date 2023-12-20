@@ -1,4 +1,4 @@
-import { EditingDataMiddleware } from '@sitecore-jss/sitecore-jss-nextjs/editing';
+//import { EditingDataMiddleware } from '@sitecore-jss/sitecore-jss-nextjs/editing';
 export const runtime = 'experimental-edge';
 /**
  * This Next.js API route is used to handle Sitecore editor data storage and retrieval by key
@@ -20,6 +20,6 @@ export const config = {
 };
 
 // Wire up the EditingDataMiddleware handler
-const handler = new EditingDataMiddleware().getHandler();
+//const handler = new EditingDataMiddleware().getHandler();
 
-export default handler;
+export default null;
