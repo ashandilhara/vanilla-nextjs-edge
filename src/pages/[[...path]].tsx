@@ -1,19 +1,19 @@
 //import { useEffect } from 'react';
-import { GetStaticPaths, GetStaticProps } from 'next';
+//import { GetStaticPaths, GetStaticProps } from 'next';
 import NotFound from 'src/NotFound';
 import Layout from 'src/Layout';
-import {
-  //RenderingType,
-  //SitecoreContext,
-  //ComponentPropsContext,
-  //EditingComponentPlaceholder,
-  StaticPath,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+//import {
+//RenderingType,
+//SitecoreContext,
+//ComponentPropsContext,
+//EditingComponentPlaceholder,
+//StaticPath,
+//} from '@sitecore-jss/sitecore-jss-nextjs';
 //import { handleEditorFastRefresh } from '@sitecore-jss/sitecore-jss-nextjs/utils';
 import { SitecorePageProps } from 'lib/page-props';
-import { sitecorePagePropsFactory } from 'lib/page-props-factory';
+//import { sitecorePagePropsFactory } from 'lib/page-props-factory';
 //import { componentBuilder } from 'temp/componentBuilder';
-import { sitemapFetcher } from 'lib/sitemap-fetcher';
+//import { sitemapFetcher } from 'lib/sitemap-fetcher';
 
 export const runtime = 'experimental-edge';
 
@@ -66,7 +66,8 @@ const SitecorePage = ({
 
 // This function gets called at build and export time to determine
 // pages for SSG ("paths", as tokenized array).
-export const getStaticPaths: GetStaticPaths = async (context) => {
+{
+  /*export const getStaticPaths: GetStaticPaths = async (context) => {
   console.log('Ashan2 - in');
   // Fallback, along with revalidate in getStaticProps (below),
   // enables Incremental Static Regeneration. This allows us to
@@ -96,12 +97,14 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
     paths,
     fallback,
   };
-};
+};*/
+}
 
 // This function gets called at build time on server-side.
 // It may be called again, on a serverless function, if
 // revalidation (or fallback) is enabled and a new request comes in.
-export const getStaticProps: GetStaticProps = async (context) => {
+{
+  /*export const getStaticProps: GetStaticProps = async (context) => {
   console.log('Ashan1 - in');
   const props = await sitecorePagePropsFactory.create(context);
   console.log('Ashan1: ' + props);
@@ -113,6 +116,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     revalidate: 5, // In seconds
     notFound: props.notFound, // Returns custom 404 page with a status code of 404 when true
   };
-};
+};*/
+}
 
 export default SitecorePage;
