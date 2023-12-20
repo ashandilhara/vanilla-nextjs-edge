@@ -61,8 +61,8 @@ const SitecorePage = ({
 // It may be called again, on a serverless function, if
 // revalidation (or fallback) is enabled and a new request comes in.
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const props = await sitecorePagePropsFactory.create(context);
-
+  //const props = await sitecorePagePropsFactory.create(context);
+  const props = {} as SitecorePageProps;
   return {
     props,
     // Next.js will attempt to re-generate the page:
