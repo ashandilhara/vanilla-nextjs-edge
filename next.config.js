@@ -8,18 +8,18 @@ const publicUrl = getPublicUrl();
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  webpack: (config) => {
-    config.resolve = {
-      ...config.resolve,
-      fallback: {
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
         fs: false,
         os: false,
         path: false,
         zlib: false,
         crypto: false,
         child_process: false,
-      },
-    };
+      };
+    }
+
     return config;
   },
   // Set assetPrefix to our public URL
