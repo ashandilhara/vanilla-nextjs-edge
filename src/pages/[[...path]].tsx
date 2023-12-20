@@ -63,6 +63,7 @@ const SitecorePage = ({
 // This function gets called at build and export time to determine
 // pages for SSG ("paths", as tokenized array).
 export const getStaticPaths: GetStaticPaths = async (context) => {
+  console.log('Ashan2 - in');
   // Fallback, along with revalidate in getStaticProps (below),
   // enables Incremental Static Regeneration. This allows us to
   // leave certain (or all) paths empty if desired and static pages
@@ -97,6 +98,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 // It may be called again, on a serverless function, if
 // revalidation (or fallback) is enabled and a new request comes in.
 export const getStaticProps: GetStaticProps = async (context) => {
+  console.log('Ashan1 - in');
   const props = await sitecorePagePropsFactory.create(context);
   console.log('Ashan1: ' + props);
   return {
