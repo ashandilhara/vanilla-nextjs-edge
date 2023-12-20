@@ -8,17 +8,15 @@ const publicUrl = getPublicUrl();
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback = {
-        fs: false,
-        os: false,
-        path: false,
-        zlib: false,
-        crypto: false,
-        child_process: false,
-      };
-    }
+  webpack: (config) => {
+    config.resolve.fallback = {
+      fs: false,
+      os: false,
+      path: false,
+      zlib: false,
+      crypto: false,
+      child_process: false,
+    };
 
     return config;
   },
