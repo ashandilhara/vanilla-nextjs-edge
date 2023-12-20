@@ -34,8 +34,8 @@ const SitecorePage = ({
   }
 
   const isEditing = layoutData.sitecore.context.pageEditing;
-  const isComponentRendering =
-    layoutData.sitecore.context.renderingType === RenderingType.Component;
+  //const isComponentRendering =
+  //layoutData.sitecore.context.renderingType === RenderingType.Component;
 
   return (
     <ComponentPropsContext value={componentProps}>
