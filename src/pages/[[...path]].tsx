@@ -3,10 +3,10 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import NotFound from 'src/NotFound';
 import Layout from 'src/Layout';
 import {
-  RenderingType,
+  //RenderingType,
   SitecoreContext,
   ComponentPropsContext,
-  EditingComponentPlaceholder,
+  //EditingComponentPlaceholder,
   StaticPath,
 } from '@sitecore-jss/sitecore-jss-nextjs';
 import { handleEditorFastRefresh } from '@sitecore-jss/sitecore-jss-nextjs/utils';
