@@ -16,6 +16,7 @@ const nextConfig = {
       zlib: false,
       crypto: false,
       child_process: false,
+      'sync-disk-cache': false,
     };
 
     return config;
