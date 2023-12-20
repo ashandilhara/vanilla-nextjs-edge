@@ -4,22 +4,22 @@ import NotFound from 'src/NotFound';
 import Layout from 'src/Layout';
 import {
   //RenderingType,
-  SitecoreContext,
-  ComponentPropsContext,
+  //SitecoreContext,
+  //ComponentPropsContext,
   //EditingComponentPlaceholder,
   StaticPath,
 } from '@sitecore-jss/sitecore-jss-nextjs';
 //import { handleEditorFastRefresh } from '@sitecore-jss/sitecore-jss-nextjs/utils';
 import { SitecorePageProps } from 'lib/page-props';
 import { sitecorePagePropsFactory } from 'lib/page-props-factory';
-import { componentBuilder } from 'temp/componentBuilder';
+//import { componentBuilder } from 'temp/componentBuilder';
 import { sitemapFetcher } from 'lib/sitemap-fetcher';
 
 export const runtime = 'experimental-edge';
 
 const SitecorePage = ({
   notFound,
-  componentProps,
+  //componentProps,
   layoutData,
   headLinks,
 }: SitecorePageProps): JSX.Element => {
@@ -35,17 +35,18 @@ const SitecorePage = ({
     return <NotFound />;
   }
 
-  const isEditing = layoutData.sitecore.context.pageEditing;
+  //const isEditing = layoutData.sitecore.context.pageEditing;
   //const isComponentRendering =
   //layoutData.sitecore.context.renderingType === RenderingType.Component;
 
-  return (
-    <ComponentPropsContext value={componentProps}>
-      <SitecoreContext
-        componentFactory={componentBuilder.getComponentFactory({ isEditing })}
-        layoutData={layoutData}
-      >
-        {/*
+  //return (
+  //<ComponentPropsContext value={componentProps}>
+  //<SitecoreContext
+  //componentFactory={componentBuilder.getComponentFactory({ isEditing })}
+  //layoutData={layoutData}
+  //>
+  {
+    /*
           Sitecore Pages supports component rendering to avoid refreshing the entire page during component editing.
           If you are using Experience Editor only, this logic can be removed, Layout can be left.
         
@@ -53,11 +54,14 @@ const SitecorePage = ({
           <EditingComponentPlaceholder rendering={layoutData.sitecore.route} />
         ) : (
           <Layout layoutData={layoutData} headLinks={headLinks} />
-        )}*/}
-        <Layout layoutData={layoutData} headLinks={headLinks} />
-      </SitecoreContext>
-    </ComponentPropsContext>
-  );
+        )}*/
+  }
+  //<Layout layoutData={layoutData} headLinks={headLinks} />
+  //</SitecoreContext>
+  //</ComponentPropsContext>
+  //);
+
+  return <Layout layoutData={layoutData} headLinks={headLinks} />;
 };
 
 // This function gets called at build and export time to determine
