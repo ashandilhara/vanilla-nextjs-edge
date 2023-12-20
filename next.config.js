@@ -8,6 +8,20 @@ const publicUrl = getPublicUrl();
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  webpack: (config) => {
+    config.resolve = {
+      ...config.resolve,
+      fallback: {
+        fs: false,
+        os: false,
+        path: false,
+        zlib: false,
+        crypto: false,
+        child_process: false,
+      },
+    };
+    return config;
+  },
   // Set assetPrefix to our public URL
   assetPrefix: publicUrl,
 
@@ -27,7 +41,7 @@ const nextConfig = {
     // prefixed path e.g. `/styleguide`.
     defaultLocale: jssConfig.defaultLanguage,
   },
-  
+
   // Enable React Strict Mode
   reactStrictMode: true,
 
@@ -53,7 +67,7 @@ const nextConfig = {
       {
         source: '/sitecore/service/:path*',
         destination: `${jssConfig.sitecoreApiHost}/sitecore/service/:path*`,
-      }, 
+      },
     ];
   },
 };
@@ -61,4 +75,4 @@ const nextConfig = {
 module.exports = () => {
   // Run the base config through any configured plugins
   return Object.values(plugins).reduce((acc, plugin) => plugin(acc), nextConfig);
-}
+};
