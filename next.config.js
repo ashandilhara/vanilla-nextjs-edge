@@ -16,6 +16,8 @@ const nextConfig = {
       zlib: false,
       crypto: false,
       child_process: false,
+      heimdalljs: false,
+      rimraf: false,
       'sync-disk-cache': false,
     };
 
