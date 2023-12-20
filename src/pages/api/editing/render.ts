@@ -1,5 +1,5 @@
 import { EditingRenderMiddleware } from '@sitecore-jss/sitecore-jss-nextjs/editing';
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 /**
  * This Next.js API route is used to handle POST requests from Sitecore editors.
  * This route should match the `serverSideRenderingEngineEndpointUrl` in your Sitecore configuration,

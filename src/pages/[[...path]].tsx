@@ -15,7 +15,7 @@ import { sitecorePagePropsFactory } from 'lib/page-props-factory';
 import { componentBuilder } from 'temp/componentBuilder';
 import { sitemapFetcher } from 'lib/sitemap-fetcher';
 
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 
 const SitecorePage = ({
   notFound,

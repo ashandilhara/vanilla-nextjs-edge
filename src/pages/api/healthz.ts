@@ -1,5 +1,5 @@
 import { HealthcheckMiddleware } from '@sitecore-jss/sitecore-jss-nextjs/monitoring';
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 /**
  * This Next.js API route is used to handle healthz check request.
  * By default this is used only by Sitecore XM Cloud (when running as editing host),
