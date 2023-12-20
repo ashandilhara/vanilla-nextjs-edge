@@ -35,15 +35,24 @@ export class SitecorePagePropsFactory {
   public async create(
     context: GetServerSidePropsContext | GetStaticPropsContext
   ): Promise<SitecorePageProps> {
-    const extendedProps = await (Object.values(plugins) as Plugin[])
-      .sort((p1, p2) => p1.order - p2.order)
-      .reduce(async (result, plugin) => {
-        const props = await result;
-        const newProps = await plugin.exec(props, context);
-        return newProps;
-      }, Promise.resolve({} as SitecorePageProps));
+    console.log('ashan');
+    const pluginsArray = Object.values(plugins) as Plugin[];
+    const sortedPlugins = pluginsArray.sort((p1, p2) => p1.order - p2.order);
+    let props = {} as SitecorePageProps;
 
-    return extendedProps;
+    return new Promise((resolve, reject) => {
+      (async () => {
+        for (const plugin of sortedPlugins) {
+          try {
+            const newProps = await plugin.exec(props, context);
+            props = newProps;
+          } catch (error) {
+            reject(error);
+          }
+        }
+        resolve(props);
+      })();
+    });
   }
 }
 
