@@ -86,6 +86,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
     fallback = process.env.EXPORT_MODE ? false : fallback;
   }
 
+  console.log('Ashan2: ' + paths.length);
   return {
     paths,
     fallback,
@@ -97,7 +98,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 // revalidation (or fallback) is enabled and a new request comes in.
 export const getStaticProps: GetStaticProps = async (context) => {
   const props = await sitecorePagePropsFactory.create(context);
-
+  console.log('Ashan1: ' + props);
   return {
     props,
     // Next.js will attempt to re-generate the page:
