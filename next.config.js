@@ -18,7 +18,6 @@ const nextConfig = {
       child_process: false,
       heimdalljs: false,
       rimraf: false,
-      'sync-disk-cache': false,
     };
 
     return config;
