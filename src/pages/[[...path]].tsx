@@ -11,7 +11,7 @@ import {
 } from '@sitecore-jss/sitecore-jss-nextjs';
 import { handleEditorFastRefresh } from '@sitecore-jss/sitecore-jss-nextjs/utils';
 import { SitecorePageProps } from 'lib/page-props';
-//import { sitecorePagePropsFactory } from 'lib/page-props-factory';
+import { sitecorePagePropsFactory } from 'lib/page-props-factory';
 import { componentBuilder } from 'temp/componentBuilder';
 //import { sitemapFetcher } from 'lib/sitemap-fetcher';
 export const runtime = 'experimental-edge';
@@ -61,9 +61,9 @@ const SitecorePage = ({
 // This function gets called at build time on server-side.
 // It may be called again, on a serverless function, if
 // revalidation (or fallback) is enabled and a new request comes in.
-export const getServerSideProps: GetServerSideProps = async () => {
-  //const props = await sitecorePagePropsFactory.create(context);
-  const props = {} as SitecorePageProps;
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const props = await sitecorePagePropsFactory.create(context);
+  //const props = {} as SitecorePageProps;
   return {
     props,
     // Next.js will attempt to re-generate the page:
