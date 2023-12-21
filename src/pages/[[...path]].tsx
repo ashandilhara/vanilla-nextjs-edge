@@ -21,28 +21,28 @@ const SitecorePage = ({
   layoutData,
   headLinks,
 }: SitecorePageProps): JSX.Element => {
-  useEffect(() => {
-    // Since Sitecore editors do not support Fast Refresh, need to refresh editor chromes after Fast Refresh finished
-    handleEditorFastRefresh();
-  }, []);
+  //useEffect(() => {
+  // Since Sitecore editors do not support Fast Refresh, need to refresh editor chromes after Fast Refresh finished
+  //handleEditorFastRefresh();
+  //}, []);
 
   if (1 == 1) {
     // Shouldn't hit this (as long as 'notFound' is being returned below), but just to be safe
     //return <NotFound />;
 
-    return <div>Ashan Hello World!!!</div>;
+    return <div>Ashan Hello World1!!!</div>;
   }
 
   if (notFound || !layoutData.sitecore.route) {
     // Shouldn't hit this (as long as 'notFound' is being returned below), but just to be safe
     //return <NotFound />;
 
-    return <div>Ashan Hello World!!!</div>;
+    return <div>Ashan Hello World2!!!</div>;
   }
 
-  const isEditing = layoutData.sitecore.context.pageEditing;
+  const isEditing = layoutData?.sitecore?.context?.pageEditing;
   const isComponentRendering =
-    layoutData.sitecore.context.renderingType === RenderingType.Component;
+    layoutData?.sitecore?.context?.renderingType === RenderingType.Component;
 
   return (
     <ComponentPropsContext value={componentProps}>
@@ -55,7 +55,7 @@ const SitecorePage = ({
           If you are using Experience Editor only, this logic can be removed, Layout can be left.
         */}
         {isComponentRendering ? (
-          <EditingComponentPlaceholder rendering={layoutData.sitecore.route} />
+          <EditingComponentPlaceholder rendering={layoutData?.sitecore?.route} />
         ) : (
           <Layout layoutData={layoutData} headLinks={headLinks} />
         )}
