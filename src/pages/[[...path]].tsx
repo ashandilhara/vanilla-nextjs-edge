@@ -26,6 +26,13 @@ const SitecorePage = ({
     handleEditorFastRefresh();
   }, []);
 
+  if (1 == 1) {
+    // Shouldn't hit this (as long as 'notFound' is being returned below), but just to be safe
+    //return <NotFound />;
+
+    return <div>Ashan Hello World!!!</div>;
+  }
+
   if (notFound || !layoutData.sitecore.route) {
     // Shouldn't hit this (as long as 'notFound' is being returned below), but just to be safe
     //return <NotFound />;
@@ -72,7 +79,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     // - When a request comes in
     // - At most once every 5 seconds
     //revalidate: 5, // In seconds
-    notFound: props.notFound, // Returns custom 404 page with a status code of 404 when true
+    //notFound: props.notFound, // Returns custom 404 page with a status code of 404 when true
   };
 };
 
