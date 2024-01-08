@@ -1,14 +1,12 @@
+import styles from './Button.module.scss';
 
-
-import styles from './Button.module.scss'
-
- // styles.error
+// styles.error
 
 export function ButtoLink(props: any) {
-  const {children, url, customStyle} = props;
+  const { children, url, customStyle } = props;
   return (
-     <a className={ `${styles.secondary} ${customStyle ? customStyle : ""}` } href={url}>
+    <a className={`${styles.secondary} ${customStyle ? customStyle : ''}`} href={url}>
       {children}
-     </a>
-  )
+    </a>
+  );
 }

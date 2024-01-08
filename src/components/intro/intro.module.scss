@@ -1,11 +1,10 @@
 @import '@sass/colors';
-@import "@sass/variables";
+@import '@sass/variables';
 
 $maxWidth: 1140px;
 $titleColor: $teal;
 $gapValueLarge: 64px;
 $gapValue: 24px;
-
 
 .intro {
   max-width: $maxWidth;
@@ -14,7 +13,7 @@ $gapValue: 24px;
 
 .mainImage {
   position: relative;
- width: 100%;
+  width: 100%;
   max-width: 100%;
   @media screen and (min-width: $bp-desktop) {
     width: 756px;
@@ -41,7 +40,7 @@ $gapValue: 24px;
   }
 }
 
-.wrapper {  
+.wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
