@@ -8,7 +8,6 @@ import {
   RichText,
 } from '@sitecore-jss/sitecore-jss-nextjs';
 import { ComponentProps } from 'lib/component-props';
-import { ButtoLink } from 'components/button/ButtonLink';
 //import { getPublicUrl } from '@sitecore-jss/sitecore-jss-nextjs/utils';
 
 //Set the public URL empty to resolve an issue with deployment restrictions in Vercel. Might need to enable this if we have to enable Experiance Editor support for the pages
@@ -50,10 +49,6 @@ const intro = (props: introProps): JSX.Element => (
             <Text field={props?.fields?.IntroSubtitle} />
           </h3>
           <RichText field={props?.fields?.IntroDescription} />
-          <ButtoLink customStyle={styles.introContent__beginBtn} url="/guides">
-            {' '}
-            Let&lsquo;s begin <i className="fa-sharp fa-solid fa-arrow-right"></i>
-          </ButtoLink>
         </div>
       </section>
     </div>
