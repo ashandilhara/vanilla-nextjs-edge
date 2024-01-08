@@ -1,4 +1,3 @@
-import styles from './intro.module.scss';
 import {
   Text,
   Field,
@@ -25,8 +24,8 @@ type introProps = ComponentProps & {
 
 const intro = (props: introProps): JSX.Element => (
   <>
-    <div className={styles.intro}>
-      <section className={styles.wrapper}>
+    <div>
+      <section>
         {/* <Image
           field={props?.fields.IntroImage}
           alt="main image"
@@ -36,13 +35,13 @@ const intro = (props: introProps): JSX.Element => (
           style={{ position: 'relative', height: 'auto' }}
         /> */}
 
-        <video controls className={styles.mainImage}>
+        <video controls>
           <source src={`${publicUrl}/assets/videos/ir.mp4`} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
-        <div className={styles.introContent}>
-          <h2 className={`${styles.introContent__title} heading2`}>
+        <div>
+          <h2 className="heading2">
             <Text field={props?.fields?.IntroTitle} />
           </h2>
           <h3 className="heading6">
