@@ -1,7 +1,7 @@
 import { GetServerSidePropsContext, GetStaticPropsContext } from 'next';
 import { SitecorePageProps } from 'lib/page-props';
 import * as plugins from 'temp/page-props-factory-plugins';
-export const runtime = 'edge';
+
 /**
  * Determines whether context is GetServerSidePropsContext (SSR) or GetStaticPropsContext (SSG)
  * @param {GetServerSidePropsContext | GetStaticPropsContext} context
